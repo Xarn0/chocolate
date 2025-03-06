@@ -1,0 +1,37 @@
+{
+	"name": "vue-project",
+	"version": "0.0.0",
+	"private": true,
+	"scripts": {
+		"serve": "vite preview",
+		"build": "vite build",
+		"build-only": "vite build",
+		"dev": "vite",
+		"preview": "vite preview",
+		"type-check": "vue-tsc --build"
+	},
+	"dependencies": {
+		"roboto-fontface": "*",
+		"swiper": "^11.2.5",
+		"vue": "^3.5.13",
+		"webfontloader": "^1.0.0"
+	},
+	"devDependencies": {
+		"@mdi/font": "^7.4.47",
+		"@tsconfig/node22": "^22.0.0",
+		"@types/node": "^22.13.4",
+		"@types/webfontloader": "^1.0.0",
+		"@vitejs/plugin-vue": "^5.2.1",
+		"@vue/tsconfig": "^0.7.0",
+		"npm-run-all2": "^7.0.2",
+		"sass": "^1.85.1",
+		"scss": "^0.2.4",
+		"typescript": "~5.7.3",
+		"vite": "^6.1.0",
+		"vite-plugin-vue-devtools": "^7.7.2",
+		"vite-plugin-vuetify": "^2.1.0",
+		"vue-tsc": "^2.2.2",
+		"vuetify": "^3.7.14"
+	},
+	"type": "module"
+}
