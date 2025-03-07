@@ -11,14 +11,14 @@
 						single-line
 						label="Name"
 						variant="outlined"
-						density="comfortable"
+						density="compact"
 					></v-text-field>
 				</v-col>
 				<v-col cols="6">
 					<v-text-field
 						label="Surname"
 						variant="outlined"
-						density="comfortable"
+						density="compact"
 						hide-details
 						single-line
 					></v-text-field>
@@ -29,7 +29,7 @@
 					<v-text-field
 						label="Enter your email"
 						variant="outlined"
-						density="comfortable"
+						density="compact"
 						hide-details
 						single-line
 					></v-text-field>
@@ -39,7 +39,7 @@
 					<h3>Phone number</h3>
 					<v-text-field
 						variant="outlined"
-						density="comfortable"
+						density="compact"
 						placeholder="Phone number"
 						prefix="+7"
 						hide-details
@@ -60,7 +60,7 @@
 						variant="outlined"
 						type="Number"
 						hide-spin-buttons
-						density="comfortable"
+						density="compact"
 						append-inner-icon="mdi-credit-card-outline"
 						hide-details
 						single-line
@@ -89,7 +89,7 @@
 				</v-col>
 
 				<v-col cols="12" class="text-center">
-					<v-btn size="large" variant="flat text-white bg-orange">Submit</v-btn>
+					<v-btn size="large" class="flat text-white bg-orange">Submit</v-btn>
 				</v-col>
 			</v-row>
 		</v-card>

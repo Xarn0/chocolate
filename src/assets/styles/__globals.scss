@@ -22,7 +22,7 @@
 	&__text {
 		font-family: "Montserrat";
 		font-size: 14px;
-		line-height: 17px;
+		line-height: 20px;
 		color: rgba(255, 255, 255, 0.7);
 		&-black {
 			color: rgba(17, 17, 17, 1);
@@ -70,4 +70,15 @@
 			border: none;
 		}
 	}
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+/* Для Firefox */
+input[type="number"] {
+	-moz-appearance: textfield;
 }

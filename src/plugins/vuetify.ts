@@ -19,7 +19,8 @@ const customTheme = {
 		white: "#ffffff",
 		grey: "rgba(250, 250, 250, 1)",
 		whiteOpacity: "#1111111a",
-		mainFon: "#fafafa"
+		mainFon: "#fafafa",
+		orange: "rgb(253, 146, 34)"
 	}
 };
 
