@@ -1,7 +1,7 @@
 import { createApp } from "vue";
 import App from "./App.vue";
 import vuetify from "./plugins/vuetify";
-import "@mdi/font/css/materialdesignicons.css"; // Добавь это!
+import "@mdi/font/css/materialdesignicons.css"; //
 
 import { loadFonts } from "./plugins/webfontloader";
 

@@ -1,5 +1,6 @@
 @import "./base.css";
 @import "./style/__mixin.scss";
+@import "./style/_media.scss";
 
 #app {
 	max-width: 1280px;
