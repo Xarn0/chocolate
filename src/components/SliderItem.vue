@@ -1,6 +1,6 @@
 <template>
 	<div style="height: 200">
-		<v-img :src="getImg(img)"></v-img>
+		<v-img class="img" :src="getImg(img)"></v-img>
 		<v-card-title>{{ title }}</v-card-title>
 		<v-card-subtitle>{{ subtitile }}</v-card-subtitle>
 		<v-card-actions>
@@ -29,3 +29,16 @@ function getImg(value: string | undefined): string {
 	return "";
 }
 </script>
+<style scoped>
+.img {
+	align-self: center;
+	text-align: center;
+	margin: 0 auto;
+	width: 400px;
+}
+@media (max-width: 768px) {
+	.img {
+		width: 300px;
+	}
+}
+</style>

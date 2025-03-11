@@ -1,6 +1,27 @@
 <template>
 	<v-responsive>
-		<v-app class="bg-mainFon">
+		<v-app class="bg-mainFon pa-0"
+			><v-navigation-drawer v-model="isHavigation" mobile location="right">
+				<h5 class="text-h4 text-center pt-3">
+					Menu
+					<v-icon class="text-h6" @click.self="isHavigation = false">
+						mdi-close</v-icon
+					>
+				</h5>
+				<v-list class="d-flex flex-column">
+					<template v-for="(i, key) of menuList">
+						<v-hover v-slot="{ isHovering, props }">
+							<v-list-item
+								class="cursor-pointer pa-2 pa-ld-5"
+								:="props"
+								density="compact"
+								:elevation="isHovering ? 2 : 0"
+								>{{ i }}</v-list-item
+							>
+						</v-hover>
+					</template>
+				</v-list>
+			</v-navigation-drawer>
 			<v-app-bar flat class="bg-mainFon">
 				<v-row class="align-center mx-8 d-flex">
 					<v-col cols="6" md="3" lg="5">
@@ -53,30 +74,36 @@
 						</v-btn>
 					</v-col>
 					<v-spacer></v-spacer>
-					<v-app-bar-nav-icon class="d-md-none"></v-app-bar-nav-icon>
+					<v-app-bar-nav-icon
+						@click="isHavigation = !isHavigation"
+						class="d-md-none"
+					></v-app-bar-nav-icon>
 				</v-row>
 			</v-app-bar>
 
-			<!-- <v-navigation-drawer class="d-none">
-				<v-list>
-					<v-list-item title="Navigation drawer"></v-list-item>
-				</v-list>
-			</v-navigation-drawer> -->
-
 			<v-main>
-				<div class="px-8">
+				<div class="px-2 px-md-8">
 					<v-card width="100%" class="my-4 rounded-xl overflow-x-hidden">
-						<v-img src="/img/background.jpg" class="d-flex align-end">
+						<v-img
+							:src="currentSrc"
+							class="d-flex align-end"
+							height="400px"
+							cover
+						>
 							<v-card class="text-while d-flex flex-column ga-8 bg-transparent">
-								<v-card-text
-									color="primary"
-									class="text-white text-h4"
-									style="width: 43vw; line-height: 38px"
-								>
-									Treat yourself or a loved one to our finest ingredients for a
-									moment of pure delight!
+								<v-card-text color="primary" style="line-height: 2.3rem">
+									<v-row class="mt-15 mt-md-0">
+										<v-col cols="12" sm="6" md="4">
+											<p class="text-white text-h6 text-md-h4 pl-md-8">
+												Treat yourself or a loved one to our finest ingredients
+												for a moment of pure delight!
+											</p>
+										</v-col>
+									</v-row>
 								</v-card-text>
-								<div class="d-flex pb-8 ps-8 pe-8 ga-3">
+								<div
+									class="d-flex flex-column align-start flex-md-row pb-8 ps-8 pe-8 ga-2 ga-md-3"
+								>
 									<form-buy></form-buy>
 
 									<leave-pop-up
@@ -84,11 +111,17 @@
 										class="bg-transparent text-white borderBtn pa-2 px-4"
 									>
 									</leave-pop-up>
-									<v-spacer></v-spacer>
+									<br />
+									<v-spacer class="d-none d-md-block"></v-spacer>
 
 									<v-menu>
 										<template v-slot:activator="{ props }">
-											<v-btn variant="text" :="props" color="white">
+											<v-btn
+												variant="text"
+												:="props"
+												color="white"
+												class="align-self-end"
+											>
 												scroll down
 												<template #append>
 													<v-btn icon size="24" color="white">
@@ -146,8 +179,7 @@
 					<v-col cols="12 pt-8">
 						<v-card
 							flat
-							width="500"
-							class="mx-auto bg-mainFon d-flex flex-column ga-4 pa-5"
+							class="mx-auto bg-mainFon w500 d-flex flex-column ga-4 pa-5"
 						>
 							<h3 class="text-center main__title">
 								IT ALL ADDS UP TO ONE EXCEPTIONAL
@@ -387,7 +419,10 @@
 						</slider-cho>
 					</v-col>
 					<v-col col="12" class="d-flex justify-center my-2 my-md-8">
-						<leave-pop-up :title="'Leave a review'" class="pa-0 pa-md-4">
+						<leave-pop-up
+							:title="'Leave a review'"
+							class="pa-4 pa-md-0 pa-md-4"
+						>
 						</leave-pop-up>
 					</v-col>
 				</v-row>
@@ -396,7 +431,7 @@
 			<v-footer class="pa-0 ma-0" style="background-color: rgba(30, 24, 35, 1)">
 				<v-row>
 					<v-col cols="12">
-						<v-img src="/img/Subcribe.jpg" cover height="100%">
+						<v-img src="/img/Subcribe.jpg" class="pa-8" cover height="100%">
 							<v-card
 								color="transparent"
 								height="100%"
@@ -407,7 +442,7 @@
 									exPLORE OUR NEW<br />
 									CHOCOLATE FIRST
 								</h4>
-								<p class="main__text w-33 text-center">
+								<p class="main__text w-md-33 text-center">
 									From the velvety texture to the rich and complex flavor, our
 									New Chocolate is a true indulgence that will leave you craving
 									more. Made with only the finest ingredients and handcrafted
@@ -420,14 +455,16 @@
 					</v-col>
 					<v-col cols="12" class="px-8">
 						<v-row
-							><v-col cols="7">
-								<h3 class="text-h4 main__title text-white">
+							><v-col cols="12" sm="7">
+								<h3
+									class="text-h4 text-center text-sm-left main__title text-white"
+								>
 									<span class="main__title-orange">Chocolate</span> a
 									delicious<br />
 									cure for a bad day
 								</h3>
 							</v-col>
-							<v-col cols="4" class="d-flex justify-end pe-5">
+							<v-col cols="6" sm="3" md="3" class="d-flex justify-end pe-5">
 								<v-list class="bg-transparent text-white">
 									<h6 class="text-body-1 mb-2">Contact us</h6>
 									<v-list-item-title>+7 (905) 443-94-26</v-list-item-title
@@ -436,8 +473,8 @@
 								</v-list></v-col
 							>
 							<!-- <v-spaser></v-spaser> -->
-							<v-col cols="1">
-								<div class="d-flex">
+							<v-col cols="6" sm="2" md="2">
+								<div class="d-flex justify-end">
 									<v-btn flat color="transparent" icon>
 										<v-icon color="white">mdi-instagram</v-icon>
 									</v-btn>
@@ -450,7 +487,9 @@
 					</v-col>
 					<v-divider color="white"></v-divider>
 					<v-col cols="12" class="mb-7">
-						<v-list class="bg-transparent text-white d-flex">
+						<v-list
+							class="bg-transparent text-white d-flex flex-wrap flex-md-nowrap"
+						>
 							<template v-for="(i, key) of menuList">
 								<v-hover v-slot="{ isHovering, props }">
 									<v-list-item
@@ -470,9 +509,7 @@
 </template>
 
 <script setup lang="ts">
-import { markRaw, reactive, ref } from "vue";
-import IconInstagram from "@/components/icons/IconInstagram.vue";
-import IconTwetter from "@/components/icons/IconTwetter.vue";
+import { markRaw, computed, onMounted, ref } from "vue";
 import IconCho from "@/components/icons/IconCho.vue";
 import IconDol from "@/components/icons/IconDol.vue";
 import IconLosh from "@/components/icons/IconLosh.vue";
@@ -481,7 +518,7 @@ import SliderCho from "@/components/SliderCho.vue";
 import SubscribePopUp from "@/components/SubscribePopUp.vue";
 import FormBuy from "@/components/FormBuy.vue";
 import LeavePopUp from "@/components/LeavePopUp.vue";
-const reveal = ref(false);
+const isHavigation = ref(false);
 
 let menuList = ref<String[]>([
 	"Home",
@@ -621,6 +658,22 @@ let tasteList = ref<TasteList[]>([
 		class: ""
 	}
 ]);
+
+const screenWidth = ref(window.innerWidth);
+
+const currentSrc = computed(() => {
+	return screenWidth.value <= 600
+		? "/img/background-m.jpg"
+		: "/img/background.jpg";
+});
+
+const updateScreenWidth = () => {
+	screenWidth.value = window.innerWidth;
+};
+
+onMounted(() => {
+	window.addEventListener("resize", updateScreenWidth);
+});
 </script>
 <style lang="scss">
 .listService:nth-child(2) {
@@ -726,5 +779,13 @@ let tasteList = ref<TasteList[]>([
 
 .borderBtn {
 	border: 1px solid white !important;
+}
+.w500 {
+	width: 500px;
+}
+@media (max-width: 1024px) {
+	.w500 {
+		width: 100%;
+	}
 }
 </style>

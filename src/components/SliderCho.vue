@@ -1,8 +1,14 @@
 <template>
 	<swiper
 		:modules="[Pagination]"
-		:slides-per-view="props.count"
+		:slidesPerView="props.count"
 		:space-between="50"
+		:breakpoints="{
+			300: { slidesPerView: 1 },
+
+			1024: { slidesPerView: 3 },
+			1280: { slidesPerView: props.count }
+		}"
 		@swiper="onSwiper"
 		@slideChange="updateActiveSlide"
 	>
@@ -41,7 +47,17 @@ import "swiper/css/pagination";
 import SwiperClass from "swiper";
 
 const swiperRef = ref<SwiperClass | null>(null);
-
+const breakPointSwiper = {
+	500: {
+		slidesPerView: 1
+	},
+	600: {
+		slidesPerView: 2
+	},
+	1024: {
+		slidesPerView: 3
+	}
+};
 // Данные
 type ListSlider = {
 	title: string;

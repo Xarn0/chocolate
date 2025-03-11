@@ -9,6 +9,7 @@
 					size="x-sm-small x-md-large"
 					elevation="2"
 					rounded
+					class="text-body-1"
 				>
 					{{ props.title }}
 				</v-btn>
