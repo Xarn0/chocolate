@@ -9,7 +9,7 @@
 		"dev": "vite",
 		"preview": "vite preview",
 		"type-check": "vue-tsc --build",
-		"deploy": "vue-cli-service build && gh-pages -d dist"
+		"deploy": "vite build && gh-pages -d dist"
 	},
 	"dependencies": {
 		"gh-pages": "^6.3.0",
