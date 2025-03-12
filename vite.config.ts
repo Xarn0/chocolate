@@ -4,6 +4,7 @@ import { fileURLToPath, URL } from "url";
 
 export default defineConfig({
 	plugins: [vue()],
+	base: "/chocolate/",
 	resolve: {
 		alias: {
 			"@": fileURLToPath(new URL("./src", import.meta.url)) // Убеждаемся, что alias настроен
