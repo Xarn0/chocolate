@@ -211,7 +211,7 @@
 											height="160"
 											width="206"
 											class="align-self-center"
-											:src="`/img/${item.img}.png`"
+											:src="`/chocolate/img/${item.img}.png`"
 										></v-img>
 										<p class="text-center pb-7 text-body-1 text-uppercase">
 											{{ item.title }}
@@ -348,7 +348,7 @@
 										:="props"
 										:class="{ boxShadow: isHovering }"
 										class="rounded-xl"
-										src="/img/listimgs/1.png"
+										src="/chocolate/img/listimgs/1.png"
 									></v-img></v-hover
 							></v-col>
 
@@ -358,7 +358,7 @@
 										:="props"
 										:class="{ boxShadow: isHovering }"
 										class="rounded-xl"
-										src="/img/listimgs/2.png"
+										src="/chocolate/img/listimgs/2.png"
 									></v-img> </v-hover
 							></v-col>
 
@@ -368,7 +368,7 @@
 										:="props"
 										:class="{ boxShadow: isHovering }"
 										class="rounded-xl"
-										src="/img/listimgs/3.png"
+										src="/chocolate/img/listimgs/3.png"
 									></v-img></v-hover></v-col
 						></v-row>
 					</v-col>
@@ -404,7 +404,9 @@
 							<v-card flat class="bg-transparent">
 								<div class="d-flex justify-center">
 									<v-avatar size="60" class="avatar">
-										<v-img :src="`/img/sliderAdmin/${slide.img}.jpg`"></v-img>
+										<v-img
+											:src="`/chocolate/img/sliderAdmin/${slide.img}.jpg`"
+										></v-img>
 									</v-avatar>
 								</div>
 								<v-card height="130px" flat class="ma-4 pt-8 boderXL">
@@ -431,7 +433,12 @@
 			<v-footer class="pa-0 ma-0" style="background-color: rgba(30, 24, 35, 1)">
 				<v-row>
 					<v-col cols="12">
-						<v-img src="/img/Subcribe.jpg" class="pa-8" cover height="100%">
+						<v-img
+							src="/chocolate/img/Subcribe.jpg"
+							class="pa-8"
+							cover
+							height="100%"
+						>
 							<v-card
 								color="transparent"
 								height="100%"
@@ -663,8 +670,8 @@ const screenWidth = ref(window.innerWidth);
 
 const currentSrc = computed(() => {
 	return screenWidth.value <= 600
-		? "/img/background-m.jpg"
-		: "/img/background.jpg";
+		? "/chocolate/img/background-m.jpg"
+		: "/chocolate/img/background.jpg";
 });
 
 const updateScreenWidth = () => {

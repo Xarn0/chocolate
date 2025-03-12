@@ -12,7 +12,7 @@
 
 		<template v-slot:default="{ isActive }">
 			<v-card class="pb-4">
-				<v-img aspect-ratio="16/9" src="/public/img/Subcribe1.jpg"></v-img>
+				<v-img aspect-ratio="16/9" src="/chocolate/img/Subcribe1.jpg"></v-img>
 				<v-card-text>
 					<h3 class="main__title">
 						Explore our<br />

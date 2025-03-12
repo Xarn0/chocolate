@@ -23,7 +23,7 @@ defineProps({
 
 function getImg(value: string | undefined): string {
 	if (value) {
-		return `/img/sliders/${value}.svg`;
+		return `/chocolate/img/sliders/${value}.svg`;
 	}
 
 	return "";
